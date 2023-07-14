@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Introduction
-Is there a relationship between different ethnic groups and the rate at which they go out to eat.
+Is there a relationship between different ethnic groups and the rate at which they go out to eat? 
 
 ## There were two years in which the General Social Survey asked about the frequency of eating out.
 ### Find those years and for the first year the question was asked download that years data in a stata format - its name will be "GSSxxxx.dta" where the xxxx is replaced by the year.  For example if the year was 1983 its name would be GSS1983.dta. Your assignment is to download the GSS yearly dataset for the first year the question was asked and then  write up the answer to the question by editing the  code block in line 31 to eval=TRUE and finish the job. 
@@ -39,7 +39,7 @@ mydata <- na.omit(mydata)
 ```
 
 # Method
-The variables of the study is Cat~num
+The data used in this statstical anyalysis was taken from the university of chicago. Ethnicity was used as a categorical and the frequency of going out to eat as numerical.
 
 # Descriptive Results
 
@@ -49,7 +49,8 @@ The variables of the study is Cat~num
 barchartGC(~race + eatout,data=mydata)
 barchartGC(~race + eatout,data=mydata, type="percent")
 ```
-These graphs show there is a relationship between ethnic groups and the amount of times they go out to eat
+
+These graphs show there is a higher percentage of whites that eat out compared to blacks and others. From the percentage of people that go out among all races , whites are also found to eat out more often.
 
 ## Numerical descriptive results
 
@@ -58,16 +59,18 @@ table1 <- xtabs(~race + eatout, data=mydata)
 rowPerc(table1)
 colPerc(table1)
 ```
-
+These results give us the frequency of which each ethnicity goes out to eat and shows us that whites go out to eat more then the other ethnic groups.
 ## Inferential results
 
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-fisher.test(table1)
+fisherXY(mydata$race,mydata$eatout,printAll=T)
 ```
 
+THe chi squared test results lets us know the p value is 0.0008179
 
-# Discussion and Conclusion 
+
+## Discussion and Conclusion 
 
  i reject the null hypothesis due to the P value which is very small. Therefore i conclude there is a relationship between ethnic groups and the rate at which they go out to eat.
