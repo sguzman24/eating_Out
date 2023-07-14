@@ -73,4 +73,4 @@ THe chi squared test results lets us know the p value is 0.0008179
 
 ## Discussion and Conclusion 
 
- i reject the null hypothesis due to the P value which is very small. Therefore i conclude there is a relationship between ethnic groups and the rate at which they go out to eat.
+i reject the null hypothesis between the white and black groups because the p value was too small. With that being said the p value between black and other was too high so i fail to reject the null hypothesis. The same applies to white and other in which the p value was also low. Overall there is a difference between the ethnic groups besides the other which there is no difference.
